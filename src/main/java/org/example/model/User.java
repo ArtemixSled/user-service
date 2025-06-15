@@ -1,6 +1,6 @@
 package org.example.model;
 
-import jakarta.validation.constraints.*;
+import javax.validation.constraints.*;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 

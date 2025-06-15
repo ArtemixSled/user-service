@@ -6,10 +6,10 @@
  */
 package org.example.dao;
 
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.Validation;
-import jakarta.validation.Validator;
-import jakarta.validation.ValidatorFactory;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 import org.example.config.HibernateUtil;
 import org.example.model.User;
 import org.hibernate.HibernateException;

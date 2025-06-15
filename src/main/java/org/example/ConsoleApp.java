@@ -1,9 +1,3 @@
-/**
- * Консольное приложение для управления сущностью User через Hibernate.
- * <p>
- * Предоставляет текстовый интерфейс для выполнения операций создания, чтения,
- * обновления и удаления пользователей.
- */
 package org.example;
 
 import org.example.config.HibernateUtil;
@@ -15,6 +9,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Консольное приложение для управления сущностью User через Hibernate.
+ * <p>
+ * Предоставляет текстовый интерфейс для выполнения операций создания, чтения,
+ * обновления и удаления пользователей.
+ */
 public class ConsoleApp {
     private static final Scanner scan = new Scanner(System.in);
     private static final UserDao dao = new UserDaoImpl();
