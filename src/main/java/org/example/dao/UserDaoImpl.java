@@ -33,7 +33,9 @@ public class UserDaoImpl implements UserDao {
      * Открывает сессию и транзакцию, сохраняет объект и фиксирует изменения.
      *
      * @param user объект User для сохранения
+     *
      * @return идентификатор созданного пользователя
+     *
      * @throws DataAccessException при ошибке сохранения или валидации
      */
     @Override
@@ -41,7 +43,7 @@ public class UserDaoImpl implements UserDao {
         Set<ConstraintViolation<User>> violations = VALIDATOR.validate(user);
         if (!violations.isEmpty()) {
             violations.forEach(v ->
-                    System.out.println("Ошибка: поле " + v.getPropertyPath() + " — " + v.getMessage())
+                    logger.warn("Ошибка валидации: поле '{}' — {}", v.getPropertyPath(), v.getMessage())
             );
             throw new IllegalArgumentException("Валидация не пройдена");
         }
@@ -96,7 +98,7 @@ public class UserDaoImpl implements UserDao {
         Set<ConstraintViolation<User>> violations = VALIDATOR.validate(user);
         if (!violations.isEmpty()) {
             violations.forEach(v ->
-                    System.out.println("Ошибка: поле `" + v.getPropertyPath() + "` — " + v.getMessage())
+                    logger.warn("Ошибка валидации при обновлении: поле '{}' — {}", v.getPropertyPath(), v.getMessage())
             );
             throw new IllegalArgumentException("Валидация не пройдена");
         }

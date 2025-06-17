@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.HibernateException;
 
+
 public class HibernateUtil {
     /**
      * Единственный экземпляр SessionFactory, инициализируется при загрузке класса.
@@ -18,14 +19,8 @@ public class HibernateUtil {
 
     static {
         try {
-            /**
-             * Создание SessionFactory на основе настроек из hibernate.cfg.xml
-             */
             sessionFactory = new Configuration().configure().buildSessionFactory();
         } catch (HibernateException ex) {
-            /**
-             * Логирование ошибки и проброс исключения инициализации
-             */
             System.err.println("Ошибка при инициализации SessionFactory: " + ex);
             throw new ExceptionInInitializerError(ex);
         }
